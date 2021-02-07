@@ -1,0 +1,307 @@
+## Data Structure and Abstract Data Type
+
+A data Structure (DS) is a way of organizing data so that it can be used 
+efficiently and effectively.
+
+An abstract data type (ADT) is an abstraction of a data structure which provides only the 
+interface to which a data structure must adhere to.
+
+    - The interface does not give any specific details about how something should be
+    implemented or in what programming language.
+
+    Examples
+
+    (ADT) Abstraction   |    (DS) Implementation
+    ---------------------------------------------
+    List                |       Dynamic array / Linked List
+    Queue               |       Linked List Queue / Array Based Queue / Stack based Queue
+    Map                 |       tree map/ Hash table / Hash Map
+
+
+## Big O / Computational Complexity Analysis
+
+Big-O Notation: gives an upper bound of the complexity in the worst case,
+helping to quantify performance as the input size becomes arbitrarily large.
+
+n = The size of the input
+
+Complexities ordered from smallest to largest:
+
+smallest        Constant: O(1)
+                Logarithmic: O(log(n))
+                Linear: O(n)
+                Linearithmic: O(nlog(n))
+                Quadratic: O(n^2)
+                Cubic: O(n^3)
+                Exponential: O(b^n), b > 1
+largest         Factorial: O(n!)
+
+## Static and Dynamic Arrays
+
+Static Array: is a fixed length container containing n elements indexable(means each 
+slot/index in the array can be referenced with a number) from the range [0, n-1].
+
+Static Array Usage
+    1) Storing/accessing sequential data.
+    2) temporarily storing objects.
+    3) Used by IO routines as buffers.
+    4) lookup tables and inverse lookup tables.
+    5) return multiple values from a function.
+    6) Used in dynamic programming to cache answers to subproblems.
+
+Complexity
+
+                |   Static Array    |       Dynamic Array
+--------------------------------------------------------------
+accessing       |   O(1)            |       O(1) constant
+search          |   O(n)            |       O(n) linear
+insertion       |   n/a             |       O(n) linear
+appending       |   n/a             |       O(n) linear
+deletion        |   n/a             |       O(1) constant
+
+Dynamic Array: can grow and shrink in size.
+
+Dynamic Array Usage
+    1) Create a static arry with an initial capacity.
+    2) Add elements to the underlying static array. (Keeping track of 
+        the number of elements.)
+    3) If adding another element will exceed the capacity, then create a new static
+        array with twice the capacity and copy the original elements into it.
+
+## Singly and Doubly Linked Lists
+
+Linked List: is a sequential list of nodes that hold data which point to other
+nodes also containing data.
+
+Singly
+
+    x -------> x -------> x -----------> x
+    data    data        data            null
+
+Linked List Usage
+    1) Used in many list, queue and stack implementations
+    2) Great for creating circular lists.
+    3) Can easily model real world objects such as trains.
+    4) Used in separating chaining, which is present in certain Hashtable implementations
+        to deal with hashing collissions.
+    5) Often used in the implementation of adjacency lists for graphs.
+
+Terminology
+    1) Head: the first node in a linked list
+    2) Tail: The last node in a linked list
+    3) Pointer: Reference to another node
+    4) Node: An object containing data and pointer(s)
+
+
+        3 -----> 84 -----> 85 -----> 21 -----> 31
+      Head            Pointer       node      Tail
+
+Singly Linked List: only holds a reference to the next node. You will always maintain
+a reference to the head and a reference to the tail node for quick additions/ removals.
+
+Doubly Linked List: holds a reference to the next and previous node. You will always
+maintain a reference to the head and the tail of the doubly linked list to do quick
+additions/removals from both ends of your list.
+
+## Singly & Doubly Linked Lists Pros and Cons
+
+            |     Pros            |      Cons
+---------------------------------------------------
+Singly      | Uses less memory    |  Cannot easily
+Linked      | simpler             |  access previous
+List        | implementation      |  elements
+---------------------------------------------------
+doubly      | can be traversed    | Takes 2x
+Linked      | backwards           | memory
+List        |                     |
+
+Complexity for Linked Lists
+
+            |   Singly Linked     |  Doubly Linked
+------------------------------------------------------
+search      |   O(n) linear       |    O(n) linear
+------------------------------------------------------
+Insert at   |   O(1) Constant     |    O(1) constant
+head        |                     |                 
+------------------------------------------------------
+Insert at   |   O(1) constant     |     O(1) constant
+tail        |                     |                     
+------------------------------------------------------
+remove at   |   O(1) constant     |     O(1) constant
+head        |                     |                     
+------------------------------------------------------
+remove at   |   O(n) linear       |     O(1) constant
+tail        |                     |                     
+------------------------------------------------------
+remove in   |   O(n) linear       |     O(n) linear
+middle      |                     |
+------------------------------------------------------
+
+## Stack
+
+Stack: is a one-ended linear data structure which mode is a real world stack by having
+two primary operations, namely push and pop. (last in first out)
+
+When and where Stacks are used
+    1) Used by undo mechanisms in text editors
+    2) used in compiler syntax checking for matching brackets and braces.
+    3) Can be used to model a pile of books or plates.
+    4) Used behind the scenes to support recursion by keeping track of previous function
+        calls.
+    5) Can be used to do a Depth First Search (DFS) on a graph.
+
+Complexity (Stacks)
+
+    Pushing     | O(1) constant
+    Popping     | O(1) constant
+    Peeking     | O(1) constant
+    Searching   | O(n) linear
+    Size        | O(1) constant
+
+## Queues
+
+Queues: are a linear data structure which models real world queues by having two 
+primary operations, namely enqueue and dequeue.
+
+Terminology
+Enqueue: Adding = offering (adding to the back)
+Dequeue: Polling (remove from front)
+
+Queue Usage
+    1) Any waiting line models a queue, for example a lineup at a theme park.
+    2) Can be used to efficiently keep track of the x most recently added elements.
+    3) Web server request management where you want first come first serve.
+    4) Breadth first search(BFS) graph traversal
+
+
+Complexity (Queues)
+
+    Enqueue     | O(1) constant
+    Dequeue     | O(1) constant
+    Peeking     | O(1) constant (looking at front queue without removal)
+    Contains    | O(n) linear (looking to see if value is within queue)
+    Removal     | O(n) linear
+    IsEmpty     | O(1) constant
+
+## Breadth First Search
+
+Concept: traverse nodes within graph from starting node till none are left.
+
+example:
+    Let Q be a queue
+        Q.enqueue(start_node)
+        start_node.visited = true
+
+        while Q is not empty Do
+            node = Q.dequeue()
+
+    For neighbor in neighbors(node):
+        if neighbor has not been visited:
+            neighbor.visited = true
+                Q.enqueue(neighbor)
+
+## Priority Queues (PQs) with an intro to Heaps
+
+Priority Queues: is an abstract data type (ADT) that operates similar to a normal queue
+except that each element has a certain priority.
+
+the priority elements in the priority queue determine the order in which elements are
+removed from the PQ.
+
+NOTE:: Priority Queues only supports comparable data, meaning the data inserted in the 
+PQ must be able to be ordered in some way either from least to greatest or greatest to
+least. This is so we are able to assign relative priorities to each element.
+
+poll() = remove the highest priority element
+
+poll rest guesses what next priority element is but doesn't guarantee an order for the Queue
+it uses a heap in this instance.
+
+## Heaps
+
+Heap: is a tree based data structure that satisfies the heap invariant (also called Heap
+property).
+
+If A is a parent node of B then A is ordered with respect to B for all nodes A, B in the
+heap.
+
+Max heap: the parent is greater than the children values
+Min heap: the parent is less than the children values.
+
+Priority Queue Usage
+    1) used in certain implementations of Dijkstra's shortest path algorithm.
+    2) Anytime you need the dynamically fetch the 'next best' or 'next worst' element
+    3) used in huffman coding ( which is often used for lossless data comparison)
+    4) Best First Search (BFS) algorithms such as A* use PQs to continuously grab the 
+    next most promising node.
+    5) Used by minimum spanning tree (MST) algorithm
+
+Complexity (Priority Queues)
+
+    Binary Heap Construction    |   O(n) linear
+    ------------------------------------------------------
+    Polling                     |   O(log(n)) Logarithmic
+    ------------------------------------------------------
+    Peeking                     |   O(1) constant
+    ------------------------------------------------------
+    Adding                      |   O(log(n)) Logarithmic
+    ------------------------------------------------------
+    Naive Removing              |   O(n) linear
+    ------------------------------------------------------
+    Advanced Removing with      |   O(log(n)) Logarithmic
+    help from a hash table      |
+    ------------------------------------------------------
+    Naive Contains              |   O(n)
+    ------------------------------------------------------
+    contains check with help    |   O(1)
+    of a hash table             |
+    ------------------------------------------------------
+
+    NOTE:: using a hash table to help optimize these operations does take up linear
+    space and also adds some overhead to the binary heap implementation.
+
+## Turning Min Priority Queue into Max Priority Queues
+
+Problem: Often the standard library of most programming languages only provide a minimum
+priority queue which sorts by smallest elements first, but sometimes we need a Max
+priority queue.
+
+    - Since elements in a priority queue are comparable they implement some sort of
+    comparable interface which we can simply negate to achieve a max heap.
+
+Example: Let x, y be numbers in the PQ. For a min PQ, if x <= y then x comes out of the
+PQ before y, so the negation of this is if x >= y then y comes out before x.
+
+## Adding Elements to Binary Heap
+    # Ways of Implementing a Priority Queue
+
+Priority Queues are usually implemented with heaps since this gives them the best
+possible time complexity.
+
+The PQ is an ADT, hence heaps are not the only way to implement PQs.
+
+Example: we could use an unsorted list, but this would not give us the best possible
+time complexity.
+
+## Priority Queue with Binary Heap
+
+There are many types of heaps we could use to implement a priority queue:
+    1) Binary Heap
+    2) Fibonacci Heap
+    3) Binomial Heap
+    4) Pairing Heap
+
+Binary Heap: is a binary tree that supports the heap invariant. In a binary tree every
+node has exactly two children.
+
+Binary Heap: is a heap where every node has exactly two children
+
+Complete binary tree: is a tree in which at every level, except possibly the last is 
+completely filled and all the nodes are as far left as possible.
+
+## Removing Elements From Binary Heap
+
+In general with heaps we always want to remove the root value because its the node
+of interest.
+
+
