@@ -304,4 +304,120 @@ completely filled and all the nodes are as far left as possible.
 In general with heaps we always want to remove the root value because its the node
 of interest.
 
+Complexity
+Polling: O(log(n)) logarithmic time
+Removing: O(n) linear time
 
+## Removing Elements From Binary Heap in O(log(n))
+
+The inefficiency of the removal alogrithm comes from the fact that we have to performance
+a linear search to find out where an element is indexed at.
+
+What if instead we did a lookup using a Hashtable to find out where a node is indexed?
+
+Hashtable: provides a constant time lookup and update for mapping from a key (the node
+value) to a value (the index).
+
+## Binary Trees and Binary Search Trees(BST)
+
+Terminology on Trees
+
+Tree: is an undirected graph which satisfies any of the following definitions:
+    1) An acyclic (no-cycles) connected graph
+    2) A connected graph with IV nodes and W-1 edges
+    3) An graph in which any two vertices are connected by exactly one path. 
+
+if we have a rooted tree then we will want to have a reference to the root node of our
+tree.
+
+it does not always matter which node is selected to be the root node because any node
+can root the tree.
+
+Child: is a node extending from another node.
+Parent: is a node extending to a another node (child).
+
+Question: What is the parent of the root node?
+Answer: It has no parent, although it may be useful to assign the parent of the root 
+node to be itself.
+
+Leaf node: is a node with no children.
+Subtree: is a tree entirely contained within another.
+
+NOTE:: subtrees may consist of a single node.
+
+## Binary Tree
+
+Binary Tree: is a tree for which every node has at most two child nodes.
+
+## Binary Search Tree
+
+Binary Search Tree: is a binary tree that satisfies the BST invariant: left subtrees
+has smaller elements and right subtree has larger elements.
+
+Binary Search Tree Usage
+    1) Implementation of some map and set ADTs
+    2) Red Black Trees
+    3) AVL Trees
+    4) Splay Trees
+    5) Used in implementation of binary heaps.
+    6) Syntax trees (used by compiler and calculators)
+    7) Treap - a probabilistic data structure (uses a randomized BST)
+
+Complexity
+
+    operation | Average   | worst
+    -------------------------------
+    Insert    | O(log(n)) | O(n)
+    -------------------------------
+    Delete    | O(log(n)) | O(n)
+    -------------------------------
+    Remove    | O(log(n)) | O(n)
+    -------------------------------
+    Search    | O(log(n)) | O(n)
+
+## Inserting Elements into a Binary Search Tree
+
+Binary Search Tree elements must be comparable so that we can order them.
+
+When inserting an element we want to compare its value to the value stored in the
+current node we're considering to decide on one of the following:
+    1) Recurse down left subtree (< case)
+    2) Recurse down right subtree (> case)
+    3) Handle finding a duplicate value (= case)
+    4) Create a new node (found a null leaf)
+
+## Removing Elements from a BST
+
+Removing elements from a Binary Search Tree can be seen as two steps:
+    1) Find the element we wish to remove.
+    2) Replace the node we want to remove with its successor (if any) to maintain the 
+    BST invariant.
+
+BST Invariant: left subtree has smaller elements and right subtree has larger elements.
+
+Step 1 Find
+
+When searching 1 of 4 things will happen:
+    1) We hit a null node at which point we know the values do not exist within our BST.
+    2) Comparator value equal to 0.
+    3) Comparator value less than 0 (the value, if it exists, is in the left subtree).
+    4) Comparator value greater than 0 (the value, if it exists, is in the right subtree).
+
+Remove Phase
+    1) Node to remove is a leaf node.
+    2) Node to remove has a right subtree but no left subtree.
+    3) Node to remove has a left subtree but no right subtree.
+    4) Node to remove has both a left subtree and a right subtree.
+        NOTE:: there can be two successors when removing the node.
+
+        Why this is possible:
+            1) is larger than everything in left subtree.
+            2) is smaller than everything in right subtree because it was found in
+            the left subtree.
+
+            but also...
+
+            1) is smaller than everything in right subtree.
+                This follows immediately from the definition of being the smallest. 
+            2) is larger than everything in left subtree because it was found in the 
+            right subtree.
