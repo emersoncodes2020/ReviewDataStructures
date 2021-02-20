@@ -1,0 +1,44 @@
+Section 0: How to Solve Problems
+
+    Step 1: Verify the constraints
+
+        ## Are all the numbers positive or can there be negatives?
+        ## Are there duplicate numbers in the array?
+        ## will there always be a solution available?
+        ## what do we return if theres no solution?
+        ## can there be multiple pairs that add up to the target?
+
+    Step 2: Write out some Test causes
+
+        ## constraints
+            1) All numbers are positive
+            2) No, there are no duplicates
+            3) Just return null
+            4) yes, there is always a solution
+            5) No, only 1 pair of numbers add up to the target.
+        
+        ## Best Case testcases
+            1) [1,2,3,7,9,2] t=11 [3,4]
+            2) [1,3,7,9,2] t=25 null
+            3) [] t=1 null
+            4) [5] t=5 null ** need two indices
+            5) [1,6] t=7 [0,1]
+
+    Step 3: Figure out a solution without compared
+        
+        ## pseudocode
+
+    Step 4: Write out our solution in code
+
+        ## actual java code now
+
+    Step 5: double check for errors
+
+        ## make sure the code is exactly as it should be.
+        ## check for spelling errors or missing brackets or semicolons.
+
+    Step 6: Test our code with our test cases (see step 2)
+
+    Step 7: Space and Time Complexity
+
+    Step 8: Can we optimize our solution?

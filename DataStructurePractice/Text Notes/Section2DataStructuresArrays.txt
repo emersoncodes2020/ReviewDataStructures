@@ -1,0 +1,35 @@
+Section 2: Data Structures - Arrays
+
+    ## organizes data sequentially
+
+    Complexity for Arrays:
+        lookup O(1)
+        insert O(n)
+        remove Best: O(1) Worst: O(n)
+
+    ## length/size of array cannot change in Java its fixed in size.
+
+    Build a Array:
+        public class MyArray {
+            private int length;
+            private int[] data;
+            private int index;
+
+            public MyArray(length, data){
+                this.length = 0;
+                this.data = {};
+            }
+
+            public void get(index) {
+                return this.data[index];
+            }
+        }
+    
+    Static vs dynamic arrays
+        ## static = fixed in size/length
+        ## dynamic = copy and rebuild/ can resize itself
+
+    Dynamic Arrays
+        ## import java.util = vector 100% when full- A single thread synchronized can
+            access at a time
+        ## ArrayList = has methods like add, remove, indexOf, lastIndexOf, size, toArray

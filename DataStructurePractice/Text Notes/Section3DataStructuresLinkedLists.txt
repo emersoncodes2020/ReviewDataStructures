@@ -1,0 +1,70 @@
+Section 2: Data Structures - LinkedLists
+
+    ## store a list of objects in sequence
+    ## group of nodes in sequence
+    ## each has a value and address/reference
+    ## first is head last is tail
+
+    Time Complexity
+        Lookup
+            by value O(n)
+            by index O(n)
+        Insert
+            at the end O(1)
+            at the beginning O(1)
+            in the middle O(n)
+        Delete
+            from the beginning O(1)
+            from the end O(n)
+            from the middle O(n)
+    
+    Differences between Arrays vs LinkedLists
+
+        Space
+        - static arrays have a fixed size
+        - Dynamic arrays grow by 50-100%
+        - LinkedLists don't waste memory
+        - use arrays if you know the number of items to store
+        - new ArrayList(100)
+
+        Arrays
+        
+            Lookup
+                by index: O(1)
+                by value: O(n)
+            Insert
+                Beginning/end: O(n)
+                middle: O(n)
+            Delete
+                Beginning: O(n)
+                middle: O(n)
+                end: O(n)
+        
+        LinkedLists
+
+            Lookup
+                by index: O(n)
+                by value: O(n)
+            Insert
+                Beginning/end: O(1)
+                middle: O(n)
+            Delete
+                Beginning: O(1)
+                middle: O(n)
+                end: O(n)
+
+    Types of LinkedLists
+
+        Singly
+            ## each node has a reference to the previous node
+            ## Delete from the end O(n)
+            ## take up less space than doubly linkedlists
+            ## can be circular which means the last node will reference the first node
+        
+        Doubly
+            ## each node has a reference to both the previous and next node
+            ## Delete from the end O(1)
+            ## take up more space
+            ## can be circular which means the last node will reference the first node
+        
+    

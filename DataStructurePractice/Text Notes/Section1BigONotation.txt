@@ -1,0 +1,92 @@
+Section 1: Big O Notation
+
+    Big O is:
+        ## used to describe the performance of algorithms.
+        ## is a mathematical notation that describes the limiting behavior of a function
+          when the argument trends towards a particular value or infinity.
+
+    O(1): Constant Time
+
+        ## no loops, just 1 returned value
+
+        public class Main{
+            public void log (int[] numbers){
+                //O(1)
+                System.out.println(numbers[0]);
+            }
+        }
+    
+    O(n): Linear Time
+
+        ## for loops, while loops through n items
+
+        public class Main {
+            public void log(int[] numbers) {
+                for(int i = 0; i < numbers.length; i++){
+                    System.out.println(numbers[i]);
+                }
+            }
+        }
+    
+    O(n^2): Quadratic Time
+
+        ## every element in a collection needs to be compared to every other element,
+           2 nested loops as an example
+
+        public class Main{
+            public void log(int[] numbers){
+                for(int first : numbers){
+                    for(int second : numbers){
+                        System.out.println(first + ", " + second);
+                    }
+                }
+            }
+        }
+
+    O(log n): Logarithmic Time
+
+        ## usually searching algorithms have log n if they are sorted (Binary Search)
+
+    O(n log n): Log Linear Time
+
+        ## usually sorting operations
+    
+    O(2^n): Exponential Time
+        
+        ## recursive algorithm that solves a problem of size N.
+
+    O(n!): Factorial Time
+
+        ## you are adding a loop for every element.
+        ## worst choice and is never really used because of how bad it is.
+
+    
+    Best to worst : 
+        O(1) constant, 
+        O(log n) Logarithmic, 
+        O(n) Linear,
+        O(n log n) Log Linear,
+        O(n^2) Quadratic,
+        O(2^n) Exponential,
+        O(n!) Factorial
+
+    What can cause time in a function?
+        - Operations (+,-,*,/)
+        - Comparisons (<,>, ==, !=)
+        - looping (for, foreach, while)
+        - Outside call
+
+    Rule Book for Big O Notation:
+        ## Rule 1: Always worst cause
+        ## Rule 2: Remove constants
+        ## Rule 3: Different inputs should have different variables.
+            O(a+b) A and B arrays nested would be O(a*b)
+                + for steps in order
+                * for nested steps 
+        ## Rule 4: Drop non-dominant terms
+
+    What causes space complexity?
+        - variables
+        - data structures
+        - function/method calls
+        - allocations to memory
