@@ -1,4 +1,4 @@
-Section 2: Data Structures - LinkedLists
+Section 3: Data Structures - LinkedLists
 
     ## store a list of objects in sequence
     ## group of nodes in sequence
