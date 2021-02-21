@@ -1,0 +1,30 @@
+Section 5: Data Structures - Queues
+
+    ## First-in First-Out (FIFO)
+    ## Sharing a resource amongst many consumers
+    ## leave from the front and add to the back
+    ## Printers
+    ## Operating Systems
+    ## web servers - Requests
+    ## Live support systems - help desk wait list
+    ## Interface
+
+    Operations
+        ## enqueue O(1)
+        ## dequeue O(1)
+        ## peek O(1)
+        ## isEmpty O(1)
+        ## isFull O(1)
+    
+    Methods
+        ## add
+        ## offer
+        ## poll
+        ## remove
+        ## peek/element
+    
+    Queue<Integer> queue = new ArrayDeque<>();
+
+    Priority Queues O(n): they are queues that are processed 
+    based on priority.
+
