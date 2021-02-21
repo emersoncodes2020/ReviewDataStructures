@@ -1,1 +1,34 @@
 Section 4: Data Structures - Stacks
+
+    ## implement the undo feature
+    ## build compilers (syntax checking)
+    ## evaluate expressions (1+2*3)
+    ## build navigation (eg forward/back)
+
+    think of a stack of books. You can only review what's on top
+
+    Last In First Out (LIFO)
+
+    example:
+
+    [action3]
+    [action2]
+    [action1]
+
+    Operations
+        push(item) O(1)
+        pop() O(1)
+        peek() O(1)
+        isEmpty() O(1)
+    
+    Reversing a String exercise
+
+    String str = "abcd";
+
+    Balanced Expression exercise
+
+    Summary:
+        Last-In First-Out (LIFO)
+        Can be implemented using Arrays / Linked Lists
+        All operations run in O(1)
+
