@@ -83,8 +83,19 @@ Section 6: Data Structures - Hash Tables
         ## store with initial hash value but multiplying by the second hash value
         ## prime number and smaller than the table size
 
-    
+    Summary
+        ## to store key/value pairs
+        ## Insert, remove, lookup run in O(1)
+        ## Hash function
+        ## Collision
+            ## linkedlist -> chaining
+            ## open addressing
+        
+        ## probing
+            ## Linear (hash1 + i) % table_size
+            ## Quadratic (hash1 + i^2) % table_size
+            ## Double Hash (hash1 + i*hash2) % table_size
+        
+        
 
-
-             
 
