@@ -39,6 +39,17 @@ public class ArrayQueue {
     // 10 -> 0
     // 11 -> 1
 
+    //Reversing a Queue
+    public static void reverse(Queue<Integer> queue){
+        Stack<Integer> stack = new Stack<>();
+        while (!queue.isEmpty()){
+            stack.push(queue.remove());
+        }
+        while(!stack.isEmpty()){
+            queue.add(stack.pop());
+        }
+    }
+
     @Override
     public String toString(){
         return Arrays.toString(items);

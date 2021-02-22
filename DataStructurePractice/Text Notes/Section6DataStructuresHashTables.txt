@@ -1,0 +1,90 @@
+Section 6: Data Structures - Hash Tables
+
+    ## Spell checkers
+    ## dictionaries
+    ## compilers
+    ## code editors
+    ## super fast lookup
+    ## you can store null values and keys
+
+    Implementations
+
+        java = hashmap
+        javascript = object
+        python = dictionary
+        C# = dictionary
+    
+    ## key value pairs
+        - employeeNumber(key) and employee (value)
+    
+    employeeNumber (key) -> Hash Function -> address -> hash Tables
+
+    Deterministic = same input same value
+
+    Operations
+        Insert O(1)
+        lookup O(1)
+        delete O(1)
+
+    ConcurrentHashMap is when you are utilizing multithreading
+
+    Methods
+        put = Insert
+        remove = must pass a key
+        containsKey O(1) 
+        containsValue O(n)
+
+    Hashes are implemented in cryptography.
+
+    Collisions can occur. 
+        Two different hash keys can generate a value creating a Collisions
+        you cannot store two different keys in the same value
+    
+    Chaining
+        using a linked list to store multiple items at the same array index
+
+        chaining a bunch of items together. this allows to resolve
+        collisions. instead of setting the value directly to the slot
+        we store them in a linkedlist and have the linked list reference the 
+        hash table slot.
+
+    Linear Probing
+        HashTable with 5 slots
+                    -> slot 0
+            K=6 V=A -> slot 1
+            K=11 V=C-> slot 2 <- 
+            K=8 V=B -> slot 3
+                    -> slot 4
+
+        Probing/aka searching
+            have to search for another slot
+            linear probing: hash(key) + i  i is a loop variable
+            Cluster three items in a row slot 1,2,3 this will make 
+            probings slower
+
+    Quadratic Probing
+        Clusters can form in the linear probing
+        Quad(square)
+
+        Linear: hash(key) + i
+            ## with linear probing we increment by 1 in each step
+        Quadratic: hash(key) + i^2
+            ## with quadratic probing we increment as follows
+                1, 4, 9, 16, 25 this means more spread
+                avoiding Clusters
+            ## (hash(key) + i^2) % table_size
+                solves the clustering problem
+                but may end in an infinite loop
+    
+    Double Hashing
+        ## we use a separate independent hash function to execute steps
+        ## hash2(key) = prime - (key % prime)
+        ## (hash1(key) + i * hash2(key)) % table_size
+        ## store with initial hash value but multiplying by the second hash value
+        ## prime number and smaller than the table size
+
+    
+
+
+             
+
