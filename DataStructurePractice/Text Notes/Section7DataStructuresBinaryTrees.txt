@@ -1,0 +1,67 @@
+Section 7: Data Structures - Binary Trees
+
+    ## Represent Hierarchical Data
+    ## databases
+    ## autocompletion
+    ## compilers
+    ## compression algorithms (jpeg, mp3)
+
+    Binary Search Trees
+        left < node < right
+        right are always greater than the root node
+        left are always less than the root node
+
+    Logarithmic time
+        throw half the items and narrow the Search
+
+    lookup O(log n)
+    insert O(log n)
+    delete O(log n)
+    
+                7
+                /\
+               4  9
+              /\  /\
+            1  6 8  10
+
+    Tree Traversal
+        trees are non linear Structures
+        you can either go left or right
+
+        Breadth First
+            level order Traversal  
+                root = 7
+                then 4 and 9
+                then 1 6 8 10
+        
+        Depth First
+            pre-order: Root, Left, right
+                7, 4, 1, 6, 9, 8, 10
+            in-order: Left, root, right
+                1, 4, 6, 7, 8, 9, 10
+            post-order: left, right, root
+                1, 6, 4, 8, 10, 9, 7
+
+    Recursion
+        implementing repetition
+
+        calculate a factorial of a problem
+        factorial 4
+        4! = 4 x 3 x 2 x 1;
+        4! = 4 x 3!;
+        n! = n x (n-1)!
+        3! = 3 x 2 x 1;
+
+        public static int factorial(int n){
+            // base condition
+            if (n == 0){
+                return 1;
+            }
+            return n * factorial (n-1);
+        }
+
+        when a function or method calls itself is recursion.
+
+    preorder traversal (root, left, right)
+
+        

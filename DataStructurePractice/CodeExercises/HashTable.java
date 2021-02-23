@@ -21,7 +21,7 @@ public class HashTable {
         }
     }
 
-    private LinkedList<Entry>[] entries = new LinkedList[];
+    private LinkedList<Entry>[] entries = new LinkedList<>();
 
     public void put(int key, String value){
         var entry = getEntry(key);

@@ -1,0 +1,47 @@
+Section 8: Searching algorithms
+
+Linear Search
+    ## iterate of a list and return items
+    
+    Time Complexity
+        best: O(1)
+        worst: O(n)
+
+    Implementations
+
+Binary Search
+    ## look at middle item 
+    middle = (left + right) / 2
+
+    ## we cut the number of items in half
+
+    Time Complexity
+        O(log n)
+
+    Space Complexity
+        recursive: O(log n)
+        iterative: O(1)
+    
+Ternary Search
+    
+    partitionSize = (right - left) / 3
+    mid1 = left + partitionSize
+    mid2 = right - partitionSize
+
+    Time Complexity
+        O(log\/3 n) log base 3
+
+        binary: 
+            target == mid 
+            target > mid 
+            target < mid
+        Ternary: 
+            target > mid2
+            target == mid2
+            target < mid2 && target > mid1
+            target == mid1
+            target < mid1
+
+    binary search is faster than ternary search
+    
+        
